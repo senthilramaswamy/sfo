@@ -1,4 +1,5 @@
 import type { Company } from '@/lib/content';
+import { withBasePath } from '@/hooks/useRouter';
 
 interface ResearchProps {
   companies: Company[];
@@ -23,7 +24,7 @@ export function Research({ companies, onNavigate }: ResearchProps) {
           {companies.map((company) => (
             <a
               key={company.slug}
-              href={`/company/${company.slug}`}
+              href={withBasePath(`/company/${company.slug}`)}
               onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
                 event.preventDefault();
                 onNavigate(`/company/${company.slug}`);
@@ -33,7 +34,7 @@ export function Research({ companies, onNavigate }: ResearchProps) {
               <div
                 className="relative aspect-[7/10] overflow-hidden bg-cream bg-no-repeat transition-transform duration-500 group-hover:scale-[1.03]"
                 style={{
-                  backgroundImage: "url('/images/companies/Portfolio_Group.png')",
+                  backgroundImage: `url('${withBasePath('/images/companies/Portfolio_Group.png')}')`,
                   backgroundPosition: `${(company.tilePosition % 5) * 25}% ${Math.floor(company.tilePosition / 5) * 100}%`,
                   backgroundSize: '500% 200%',
                   filter: 'sepia(0.5) saturate(1.15) hue-rotate(-15deg) brightness(0.96)',

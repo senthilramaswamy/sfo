@@ -4,8 +4,17 @@ export type Route =
   | { name: 'home' }
   | { name: 'company'; slug: string };
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function withBasePath(path: string) {
+  return `${basePath}${path}`;
+}
+
 export function parsePath(pathname: string): Route {
-  const companyMatch = pathname.match(/^\/company\/([\w-]+)$/);
+  const appPath = pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length) || '/'
+    : pathname;
+  const companyMatch = appPath.match(/^\/company\/([\w-]+)$/);
   if (companyMatch) {
     return { name: 'company', slug: companyMatch[1] };
   }
@@ -22,8 +31,9 @@ export function useRouter() {
   }, []);
 
   const navigate = useCallback((path: string) => {
-    window.history.pushState(null, '', path);
-    setRoute(parsePath(path));
+    const fullPath = withBasePath(path);
+    window.history.pushState(null, '', fullPath);
+    setRoute(parsePath(fullPath));
     window.scrollTo(0, 0);
   }, []);
 
