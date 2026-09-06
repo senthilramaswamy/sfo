@@ -25,6 +25,7 @@ export function Research({ companies, onNavigate }: ResearchProps) {
             <a
               key={company.slug}
               href={withBasePath(`/company/${company.slug}`)}
+              aria-label={`Read research about ${company.company}`}
               onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
                 event.preventDefault();
                 onNavigate(`/company/${company.slug}`);
@@ -46,17 +47,6 @@ export function Research({ companies, onNavigate }: ResearchProps) {
                     background: 'linear-gradient(160deg, rgba(107,42,32,0.22) 0%, rgba(244,234,217,0.06) 50%, rgba(61,22,15,0.18) 100%)',
                   }}
                 />
-              </div>
-              <div className="border-t border-line px-4 py-4 max-[600px]:px-3 max-[600px]:py-3">
-                <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.08em] text-gold">
-                  {company.sector}
-                </div>
-                <h3 className="text-[16px] leading-[1.2] transition-colors group-hover:text-maroon max-[600px]:text-[14px]">
-                  {company.company}
-                </h3>
-                <span className="mt-3 block font-mono text-[10px] uppercase tracking-[0.08em] text-ink-soft transition-colors group-hover:text-maroon">
-                  Read research →
-                </span>
               </div>
             </a>
           ))}
