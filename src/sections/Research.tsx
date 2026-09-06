@@ -38,7 +38,7 @@ export function Research({ companies, onNavigate }: ResearchProps) {
                   backgroundImage: `url('${withBasePath('/images/companies/Portfolio_Group.png')}')`,
                   backgroundPosition: `${(company.tilePosition % 5) * 25}% ${Math.floor(company.tilePosition / 5) * 100}%`,
                   backgroundSize: '500% 200%',
-                  filter: 'sepia(0.5) saturate(1.15) hue-rotate(-15deg) brightness(0.96)',
+                  filter: 'sepia(0.28) saturate(0.82) hue-rotate(-8deg) brightness(1.01) contrast(0.98)',
                 }}
               >
                 <div
