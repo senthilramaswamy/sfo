@@ -1,9 +1,11 @@
+import { withBasePath } from '@/hooks/useRouter';
+
 export function Hero() {
   return (
     <section
       className="text-cream"
       style={{
-        backgroundImage: "linear-gradient(90deg, rgba(24, 14, 8, 0.88) 0%, rgba(24, 14, 8, 0.68) 42%, rgba(24, 14, 8, 0.22) 100%), url('/SFO_Hero.png')",
+        backgroundImage: `linear-gradient(90deg, rgba(24, 14, 8, 0.88) 0%, rgba(24, 14, 8, 0.68) 42%, rgba(24, 14, 8, 0.22) 100%), url('${withBasePath('/SFO_Hero.png')}')`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         padding: '130px 0 108px',

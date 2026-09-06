@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { withBasePath } from '@/hooks/useRouter';
 
 interface NavItem {
   id: string;
@@ -36,7 +37,7 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
       <div className="mx-auto flex max-w-site items-center justify-between px-8 py-5 max-[600px]:px-[22px] max-[600px]:py-4">
         {/* Brand */}
         <a
-          href="/"
+          href={withBasePath('/')}
           onClick={(e) => handleClick(e, '/')}
           className="flex items-center gap-3"
         >
@@ -54,7 +55,7 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
             {navLinks.map((item) => (
               <a
                 key={item.id}
-                href={`/#${item.id}`}
+                href={withBasePath(`/#${item.id}`)}
                 onClick={(e) => handleClick(e, `/#${item.id}`)}
                 className="group relative py-1 text-sm transition-colors"
               >
@@ -63,7 +64,7 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
               </a>
             ))}
             <a
-              href="/#contact"
+              href={withBasePath('/#contact')}
               onClick={(e) => handleClick(e, '/#contact')}
               className="border border-maroon px-[18px] py-[9px] font-mono text-xs text-maroon transition-colors hover:bg-maroon hover:text-cream"
               style={{ borderRadius: '2px' }}
@@ -93,7 +94,7 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
           {navLinks.map((item) => (
             <a
               key={item.id}
-              href={`/#${item.id}`}
+              href={withBasePath(`/#${item.id}`)}
               onClick={(e) => handleClick(e, `/#${item.id}`)}
               className="text-sm"
             >
@@ -101,7 +102,7 @@ export function Navigation({ items, activeId, onNavigate }: NavigationProps) {
             </a>
           ))}
           <a
-            href="/#contact"
+            href={withBasePath('/#contact')}
             onClick={(e) => handleClick(e, '/#contact')}
             className="border border-maroon px-[18px] py-[9px] text-center font-mono text-xs text-maroon"
             style={{ borderRadius: '2px' }}
