@@ -9,7 +9,7 @@ export interface Person {
   role: string;
   name: string;
   bio: string;
-  initials: string;
+  image: string;
 }
 
 export interface Company {
@@ -19,7 +19,7 @@ export interface Company {
   angle: string;
   writeup: string[];
   website: string | null;
-  tilePosition: number;
+  image: string;
 }
 
 export const principles: Principle[] = [
@@ -51,14 +51,14 @@ export const people: Person[] = [
     role: 'Founder',
     name: 'Sanjay Jain',
     bio: 'Four decades of experience investing in Indian equities across multiple business and market cycles, with an emphasis on business quality, management integrity, financial discipline and patient ownership.',
-    initials: 'SJ',
+    image: '/images/founders/sanjay-jain.jpg',
   },
   {
     position: 2,
     role: 'Chief Investment Officer',
     name: 'Manas Jain',
     bio: 'Leads investment research, portfolio construction and company engagement for the family office from Chennai. Prior to this, Manas worked as a Research Analyst in the Quantitative Strategies Group at Sage Advisory Services, a $25 billion investment management firm based in Austin, Texas. He holds a Master\u2019s in Financial Engineering from UCLA Anderson School of Management and a Bachelor\u2019s in Industrial Engineering from the College of Engineering, Guindy.',
-    initials: 'MJ',
+    image: '/images/founders/manas-jain.jpg',
   },
 ];
 
@@ -73,7 +73,7 @@ export const companies: Company[] = [
       'Our work focuses on the durability of its customer relationships, manufacturing capabilities, operating economics and the long-term demand outlook for the markets it serves.',
     ],
     website: 'https://www.mmforgings.com',
-    tilePosition: 0,
+    image: '/images/companies/mm-forgings.png',
   },
   {
     slug: 'rolex-rings',
@@ -85,7 +85,7 @@ export const companies: Company[] = [
       'We study the company through its manufacturing quality, customer relationships, product mix and ability to build a durable position across its end markets.',
     ],
     website: 'https://www.rolexrings.com',
-    tilePosition: 1,
+    image: '/images/companies/rolex-rings.png',
   },
   {
     slug: 'karur-vysya-bank',
@@ -97,7 +97,7 @@ export const companies: Company[] = [
       'Our research considers the quality of its deposit franchise, lending discipline, operating efficiency and the scope for responsible long-term growth.',
     ],
     website: 'https://www.kvb.bank.in',
-    tilePosition: 2,
+    image: '/images/companies/karur-vysya-bank.png',
   },
   {
     slug: 'federal-bank',
@@ -109,7 +109,7 @@ export const companies: Company[] = [
       'We follow the bank’s customer franchise, deposit growth, credit culture and ability to compound responsibly through different market conditions.',
     ],
     website: 'https://www.federalbank.co.in',
-    tilePosition: 3,
+    image: '/images/companies/federal-bank.png',
   },
   {
     slug: 'uniparts-india',
@@ -121,7 +121,7 @@ export const companies: Company[] = [
       'We examine its product position, customer relationships, geographic reach and the long-term opportunity in the equipment markets it supplies.',
     ],
     website: 'https://www.unipartsgroup.com',
-    tilePosition: 4,
+    image: '/images/companies/uniparts-india.png',
   },
   {
     slug: 'menon-bearings',
@@ -133,7 +133,7 @@ export const companies: Company[] = [
       'Our work considers its product capabilities, customer base, manufacturing economics and the potential for steady growth in the markets it serves.',
     ],
     website: 'https://menonbearings.in',
-    tilePosition: 5,
+    image: '/images/companies/menon-bearings.png',
   },
   {
     slug: 'deepak-fertilisers',
@@ -145,7 +145,7 @@ export const companies: Company[] = [
       'We study the balance between product demand, manufacturing capabilities, input costs, capital allocation and the long-term development of its end markets.',
     ],
     website: 'https://www.dfpcl.com',
-    tilePosition: 6,
+    image: '/images/companies/deepak-fertilisers.png',
   },
   {
     slug: 'bharat-forge',
@@ -157,7 +157,7 @@ export const companies: Company[] = [
       'Our research follows its engineering depth, customer relationships, end-market mix and ability to create value through disciplined investment over a full cycle.',
     ],
     website: 'https://www.bharatforge.com',
-    tilePosition: 7,
+    image: '/images/companies/bharat-forge.png',
   },
   {
     slug: 'mahindra-and-mahindra',
@@ -169,7 +169,7 @@ export const companies: Company[] = [
       'We assess its brands, product pipeline, competitive position, execution and the long-term demand drivers across its core categories.',
     ],
     website: 'https://www.mahindra.com',
-    tilePosition: 8,
+    image: '/images/companies/mahindra-and-mahindra.png',
   },
   {
     slug: 'astra-microwave-products',
@@ -181,7 +181,7 @@ export const companies: Company[] = [
       'Our work considers its technical capabilities, project execution, customer relationships and the opportunity created by long-term demand for specialised systems.',
     ],
     website: 'https://astramwp.com',
-    tilePosition: 9,
+    image: '/images/companies/astra-microwave-products.png',
   },
 ];
 

@@ -25,6 +25,7 @@ export function Research({ companies, onNavigate }: ResearchProps) {
             <a
               key={company.slug}
               href={withBasePath(`/company/${company.slug}`)}
+              aria-label={`Read research about ${company.company}`}
               onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
                 event.preventDefault();
                 onNavigate(`/company/${company.slug}`);
@@ -32,31 +33,23 @@ export function Research({ companies, onNavigate }: ResearchProps) {
               className="group overflow-hidden border border-line bg-cream transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-[0_14px_30px_rgba(54,35,20,0.12)]"
             >
               <div
-                className="relative aspect-[7/10] overflow-hidden bg-cream bg-no-repeat transition-transform duration-500 group-hover:scale-[1.03]"
-                style={{
-                  backgroundImage: `url('${withBasePath('/images/companies/Portfolio_Group.png')}')`,
-                  backgroundPosition: `${(company.tilePosition % 5) * 25}% ${Math.floor(company.tilePosition / 5) * 100}%`,
-                  backgroundSize: '500% 200%',
-                  filter: 'sepia(0.5) saturate(1.15) hue-rotate(-15deg) brightness(0.96)',
-                }}
+                className="relative aspect-[7/10] overflow-hidden bg-cream transition-transform duration-500 group-hover:scale-[1.03]"
               >
+                <img
+                  src={withBasePath(company.image)}
+                  alt={`${company.company} logo`}
+                  className="h-full w-full object-fill"
+                  style={{
+                    filter: 'saturate(0.92) brightness(1.03) contrast(1.01)',
+                  }}
+                />
                 <div
                   className="pointer-events-none absolute inset-0 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-0"
                   style={{
-                    background: 'linear-gradient(160deg, rgba(107,42,32,0.22) 0%, rgba(244,234,217,0.06) 50%, rgba(61,22,15,0.18) 100%)',
+                    background:
+                      'linear-gradient(160deg, rgba(236,225,198,0.34) 0%, rgba(236,225,198,0.12) 50%, rgba(236,225,198,0.28) 100%)',
                   }}
                 />
-              </div>
-              <div className="border-t border-line px-4 py-4 max-[600px]:px-3 max-[600px]:py-3">
-                <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.08em] text-gold">
-                  {company.sector}
-                </div>
-                <h3 className="text-[16px] leading-[1.2] transition-colors group-hover:text-maroon max-[600px]:text-[14px]">
-                  {company.company}
-                </h3>
-                <span className="mt-3 block font-mono text-[10px] uppercase tracking-[0.08em] text-ink-soft transition-colors group-hover:text-maroon">
-                  Read research →
-                </span>
               </div>
             </a>
           ))}
