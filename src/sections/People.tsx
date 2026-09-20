@@ -1,4 +1,5 @@
 import type { Person } from '@/lib/content';
+import { withBasePath } from '@/hooks/useRouter';
 
 interface PeopleProps {
   people: Person[];
@@ -23,9 +24,12 @@ export function People({ people }: PeopleProps) {
             key={person.position}
             className="flex animate-reveal gap-[26px] border-t border-line py-[46px] max-[600px]:flex-col"
           >
-            <div className="flex h-[54px] w-[54px] shrink-0 items-center justify-center rounded-full bg-teal font-serif text-[19px] font-medium text-cream">
-              {person.initials}
-            </div>
+            <img
+              src={withBasePath(person.image)}
+              alt={person.name}
+              loading="lazy"
+              className="h-[86px] w-[86px] shrink-0 rounded-full object-cover object-top"
+            />
             <div>
               <span className="mb-2 block font-mono text-xs uppercase tracking-[0.1em] text-gold">
                 {person.role}
