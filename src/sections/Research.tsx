@@ -55,9 +55,6 @@ export function Research({ companies, onNavigate }: ResearchProps) {
           ))}
         </div>
 
-        <p className="mt-[26px] font-serif text-[13.5px] italic text-ink-soft">
-          Detailed notes are shared directly in conversations with promoters and management teams.
-        </p>
       </div>
     </section>
   );
