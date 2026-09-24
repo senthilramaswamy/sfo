@@ -24,12 +24,18 @@ export function People({ people }: PeopleProps) {
             key={person.position}
             className="flex animate-reveal gap-[26px] border-t border-line py-[46px] max-[600px]:flex-col"
           >
-            <img
-              src={withBasePath(person.image)}
-              alt={person.name}
-              loading="lazy"
-              className="h-[86px] w-[86px] shrink-0 rounded-full object-cover object-top"
-            />
+            <div className="h-[132px] w-[106px] shrink-0 overflow-hidden rounded-[4px]">
+              <img
+                src={withBasePath(person.image)}
+                alt={person.name}
+                loading="lazy"
+                className={`h-full w-full object-cover ${
+                  person.name === 'Manas Jain'
+                    ? 'scale-[1.55] object-[center_24%]'
+                    : 'object-top'
+                }`}
+              />
+            </div>
             <div>
               <span className="mb-2 block font-mono text-xs uppercase tracking-[0.1em] text-gold">
                 {person.role}
